@@ -7,7 +7,7 @@
 # 作者: Jimmydada (优化支持 by ChatGPT)
 
 # 配置下载地址和相关变量
-CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
+CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
 CONFIG_FILE="/etc/dnsmasq.conf"
 SCRIPT_NAME="dnsmasq-manager.sh"
 RESOLV_CONF="/etc/resolv.conf"
