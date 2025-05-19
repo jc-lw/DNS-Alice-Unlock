@@ -8,7 +8,7 @@ VERSION="V_0.7.0"
 LAST_UPDATED=$(date +"%Y-%m-%d")
 
 # 指定配置文件的下载地址
-CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
+CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
 CONFIG_FILE="/etc/dnsmasq.conf"
 SCRIPT_NAME="dns-unlock.sh"
 AUTHOR="Jimmydada"
@@ -140,13 +140,13 @@ case $choice in
   case $config_choice in
   1)
     # 更新为 HK 配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
     TARGET_FILE="dnsmasq.conf.hk"
     REGION="HK"
     ;;
   2)
     # 更新为 SG 配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
     TARGET_FILE="dnsmasq.conf.sg"
     REGION="SG"
     ;;
@@ -310,7 +310,7 @@ case $choice in
 
   # 下载 smartdns 配置文件
   echo "下载 smartdns 配置文件..."
-  curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
+  curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
   if [ $? -ne 0 ]; then
     echo -e "\033[31m[错误] 配置文件下载失败！\033[0m"
     exit 1
