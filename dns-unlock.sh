@@ -36,7 +36,7 @@ CONFIG_FILE="/etc/dnsmasq.conf"
 SCRIPT_NAME="dns-unlock.sh"
 SCRIPT_PATH="/root/$SCRIPT_NAME"
 SYMLINK_PATH="/usr/local/bin/ddns"
-AUTHOR="Jimmydada"
+AUTHOR="jc-lw"
 
 # 检查并创建 ddns 快捷命令（符号链接）
 create_symlink() {
