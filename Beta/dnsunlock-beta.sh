@@ -31,7 +31,7 @@ if ! command -v jq &> /dev/null; then
 fi
 
 # 指定配置文件的下载地址
-CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
+CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
 CONFIG_FILE="/etc/dnsmasq.conf"
 SCRIPT_NAME="dnsunlock-beta.sh"
 SCRIPT_PATH="/root/$SCRIPT_NAME"
@@ -313,19 +313,19 @@ fi
     case $update_choice in
   1)
     # 更新为 HK 配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
     TARGET_FILE="dnsmasq.conf.hk"
     REGION="HK"
     ;;
   2)
     # 更新为 SG 配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
     TARGET_FILE="dnsmasq.conf.sg"
     REGION="SG"
     ;;
   3)
     # 更新为全量配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.allsg"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.allsg"
     TARGET_FILE="dnsmasq.conf.allsg"
     REGION="AllSG"
     ;;
@@ -433,7 +433,7 @@ fi
 
 # 下载 smartdns 配置文件
 echo -e "\033[1;34m正在下载 smartdns 配置文件...\033[0m"
-curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
+curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
 if [ $? -ne 0 ]; then
   echo -e "\033[31m[错误] 配置文件下载失败！\033[0m"
   exit 1
@@ -571,7 +571,7 @@ echo -e "\033[1;32msmartdns 配置已完成，服务已启动并设置为开机�
 
     4)
       # 一键更新全量配置
-      CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/smartdns.conf.sg"
+      CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/smartdns.conf.sg"
       CONFIG_FILE="/etc/smartdns/smartdns.conf"
       BACKUP_FILE="/etc/smartdns/smartdns.conf.bak"
 
@@ -787,7 +787,7 @@ echo -e "\033[1;32msmartdns 配置已完成，服务已启动并设置为开机�
   echo -e "\033[1;34m检查远程脚本版本...\033[0m"
   
   # 获取远程脚本的版本号
-  REMOTE_VERSION=$(curl -s https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh | grep "VERSION=" | cut -d '"' -f 2)
+  REMOTE_VERSION=$(curl -s https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh | grep "VERSION=" | cut -d '"' -f 2)
   
   # 当前脚本的版本号
  CURRENT_VERSION=$(grep 'VERSION=' /root/dns-unlock.sh | cut -d '"' -f 2)
@@ -801,7 +801,7 @@ echo -e "\033[1;32msmartdns 配置已完成，服务已启动并设置为开机�
     echo -e "\033[1;33m正在下载并更新脚本...\033[0m"
     
     # 下载并替换当前脚本
-    curl -o /root/dns-unlock.sh https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh
+    curl -o /root/dns-unlock.sh https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh
     if [ $? -eq 0 ]; then
       echo -e "\033[1;32m脚本已成功更新为版本 $REMOTE_VERSION\033[0m"
       
