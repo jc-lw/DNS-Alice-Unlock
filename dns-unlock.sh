@@ -31,7 +31,7 @@ if ! command -v jq &> /dev/null; then
 fi
 
 # 指定配置文件的下载地址
-CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
+CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
 CONFIG_FILE="/etc/dnsmasq.conf"
 SCRIPT_NAME="dns-unlock.sh"
 SCRIPT_PATH="/root/$SCRIPT_NAME"
@@ -323,13 +323,13 @@ case $main_choice in
     echo -e "\033[1;32m配置文件已更新：$CONFIG_FILE\033[0m"
 
 # 提示用户是否调整配置文件中的 IP
-    read -p "配置文件中 IP 为 154.12.177.22 和 157.20.104.47，是否调整？(回车默认Alice DNS，输入y调整自己的解锁IP): " adjust
+    read -p "配置文件中 IP 为 181.215.6.75 和 91.103.120.49，是否调整？(回车默认Alice DNS，输入y调整自己的解锁IP): " adjust
     if [[ "$adjust" == "y" || "$adjust" == "Y" ]]; then
         read -p "请输入您的解锁IP: " unlock_ip
         # 修改配置文件中的 IP 地址
         echo -e "\033[1;34m正在修改配置文件中的 IP 地址...\033[0m"
-        sed -i "s/154.12.177.22/$unlock_ip/g" $CONFIG_FILE
-        sed -i "s/157.20.104.47/$unlock_ip/g" $CONFIG_FILE
+        sed -i "s/181.215.6.75/$unlock_ip/g" $CONFIG_FILE
+        sed -i "s/91.103.120.49/$unlock_ip/g" $CONFIG_FILE
         echo -e "\033[1;32m配置文件中的 IP 已更新为新的解锁IP：$unlock_ip\033[0m"
     else
         echo -e "\033[1;32m未调整配置文件中的 IP。\033[0m"
@@ -413,19 +413,19 @@ case $main_choice in
     case $update_choice in
   1)
     # 更新为 HK 配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
     TARGET_FILE="dnsmasq.conf.hk"
     REGION="HK"
     ;;
   2)
     # 更新为 SG 配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
     TARGET_FILE="dnsmasq.conf.sg"
     REGION="SG"
     ;;
   3)
     # 更新为全量配置
-    CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.allsg"
+    CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.allsg"
     TARGET_FILE="dnsmasq.conf.allsg"
     REGION="AllSG"
     ;;
@@ -451,14 +451,14 @@ case $main_choice in
     
     # 提示用户是否更换 IP
     if [ "$REGION" == "AllSG" ]; then
-      echo -e "\033[1;33m配置文件中包含 IP 地址 157.20.104.47，是否需要替换为自己的 IP 地址？(回车默认不修改，输入 y 修改)\033[0m"
+      echo -e "\033[1;33m配置文件中包含 IP 地址 181.215.6.75，是否需要替换为自己的 IP 地址？(回车默认不修改，输入 y 修改)\033[0m"
       read use_own_ip
 
       if [ "$use_own_ip" == "y" ]; then
         echo -e "\033[1;33m请输入您的 IP 地址：\033[0m"
         read user_ip
         # 替换文件中的 IP 地址
-        sed -i "s/157.20.104.47/$user_ip/g" /etc/$TARGET_FILE
+        sed -i "s/181.215.6.75/$user_ip/g" /etc/$TARGET_FILE
         echo -e "\033[1;32mIP 地址已替换为 $user_ip\033[0m"
       else
         echo -e "\033[1;32m保留原有 IP 地址！\033[0m"
@@ -531,15 +531,15 @@ install_smartdns
 
 # 下载 smartdns 配置文件
 echo -e "\033[1;34m正在下载 smartdns 配置文件...\033[0m"
-curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
+curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
 if [ $? -ne 0 ]; then
   echo -e "\033[31m[错误] 配置文件下载失败！\033[0m"
   exit 1
 fi
 
 # 检测 smartdns 配置文件中的默认 IP
-DEFAULT_IP1="154.12.177.22"
-DEFAULT_IP2="157.20.104.47"
+DEFAULT_IP1="181.215.6.75"
+DEFAULT_IP2="91.103.120.49"
 
 echo -e "\033[1;34m检测到配置文件中的默认 IP 为：\033[0m"
 echo -e "\033[1;33m1. $DEFAULT_IP1\033[0m"
@@ -673,7 +673,7 @@ echo -e "\033[1;32msmartdns 配置已完成，服务已启动并设置为开机�
 
     4)
       # 一键更新全量配置
-      CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/smartdns.conf.sg"
+      CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/smartdns.conf.sg"
       CONFIG_FILE="/etc/smartdns/smartdns.conf"
       BACKUP_FILE="/etc/smartdns/smartdns.conf.bak"
 
@@ -684,14 +684,14 @@ echo -e "\033[1;32msmartdns 配置已完成，服务已启动并设置为开机�
         continue
       fi
 
-      echo "检测到配置文件中可能需要更换的 IP：157.20.104.47"
+      echo "检测到配置文件中可能需要更换的 IP：91.103.120.49"
       echo -e "\033[1;34m是否需要替换为其他 IP 地址？[y/N]\033[0m"
       read replace_choice
       if [[ "$replace_choice" =~ ^[Yy]$ ]]; then
         echo -e "\033[1;34m请输入新的 IP 地址：\033[0m"
         read new_ip
         sed -i "s/157\.20\.104\.47/$new_ip/g" /tmp/smartdns.conf.sg
-        echo -e "\033[1;32m已将 157.20.104.47 替换为 $new_ip\033[0m"
+        echo -e "\033[1;32m已将 91.103.120.49 替换为 $new_ip\033[0m"
       fi
 
       # 检测是否存在默认配置文件
@@ -921,7 +921,7 @@ echo -e "\033[1;32msmartdns 配置已完成，服务已启动并设置为开机�
   echo -e "\033[1;34m检查远程脚本版本...\033[0m"
   
   # 获取远程脚本的版本号
-  REMOTE_VERSION=$(curl -s https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh | grep "VERSION=" | cut -d '"' -f 2)
+  REMOTE_VERSION=$(curl -s https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh | grep "VERSION=" | cut -d '"' -f 2)
   
   # 当前脚本的版本号
  CURRENT_VERSION=$(grep 'VERSION=' /root/dns-unlock.sh | cut -d '"' -f 2)
@@ -935,7 +935,7 @@ echo -e "\033[1;32msmartdns 配置已完成，服务已启动并设置为开机�
     echo -e "\033[1;33m正在下载并更新脚本...\033[0m"
     
     # 下载并替换当前脚本
-    curl -o /root/dns-unlock.sh https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh
+    curl -o /root/dns-unlock.sh https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh
     if [ $? -eq 0 ]; then
       echo -e "\033[1;32m脚本已成功更新为版本 $REMOTE_VERSION\033[0m"
       
