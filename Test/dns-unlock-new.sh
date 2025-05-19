@@ -8,7 +8,7 @@ VERSION="V_0.8.9"
 LAST_UPDATED=$(date +"%Y-%m-%d")
 
 # 指定配置文件的下载地址
-CONFIG_URL="https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
+CONFIG_URL="https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf"
 CONFIG_FILE="/etc/dnsmasq.conf"
 SCRIPT_NAME="dns-unlock.sh"
 AUTHOR="Jimmydada"
@@ -161,7 +161,7 @@ case $main_choice in
     1)
       # 更新为 HK 配置
       echo -e "\033[1;34m更新 dnsmasq 配置为 HK 配置...\033[0m"
-      curl -o $CONFIG_FILE "https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
+      curl -o $CONFIG_FILE "https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.hk"
       echo -e "\033[1;32mdnsmasq 配置已更新为 HK 配置！\033[0m"
       systemctl restart dnsmasq
       ;;
@@ -169,7 +169,7 @@ case $main_choice in
     2)
       # 更新为 SG 配置
       echo -e "\033[1;34m更新 dnsmasq 配置为 SG 配置...\033[0m"
-      curl -o $CONFIG_FILE "https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
+      curl -o $CONFIG_FILE "https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dnsmasq.conf.sg"
       echo -e "\033[1;32mdnsmasq 配置已更新为 SG 配置！\033[0m"
       systemctl restart dnsmasq
       ;;
@@ -257,7 +257,7 @@ case $main_choice in
 
   # 下载 smartdns 配置文件
   echo "下载 smartdns 配置文件..."
-  curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
+  curl -o /etc/smartdns/smartdns.conf https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/smartdns.conf
   if [ $? -ne 0 ]; then
     echo -e "\033[31m[错误] 配置文件下载失败！\033[0m"
     exit 1
