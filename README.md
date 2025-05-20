@@ -8,12 +8,8 @@
 
 ## 使用指南
 
-### 步骤 1: 注册 Alice 账号 (适用于没有解锁DNS IP的用户)
-1. 访问 [Alice DNS 官网](https://app.alice.ws) 进行注册。
-2. 在注册后，将您的 VPS IP 地址添加至 Alice 白名单。
-   > **注意**：此过程可能需要 3-5 分钟生效。
 
-### 步骤 2: 运行一键分流脚本
+### 步骤 : 运行一键分流脚本
 1. 下载并运行以下脚本：
    ```bash
    wget https://raw.githubusercontent.com/jc-lw/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh && bash dns-unlock.sh
@@ -52,4 +48,5 @@
 
 ---
 
+### 原作者 Jimmyzxk  本项目二次修改
 
